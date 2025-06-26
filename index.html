@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Metodológica - Índice de Riesgo de Crimen Organizado</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c5aa0, #1e3a5f);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 300;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+            padding: 20px;
+            border-left: 4px solid #2c5aa0;
+            background: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .section h2 {
+            color: #2c5aa0;
+            margin-top: 0;
+            font-size: 1.6em;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+        
+        .subsection {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .subsection h3 {
+            color: #1e3a5f;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        
+        .indicator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .indicator-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .indicator-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .indicator-title {
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 8px;
+        }
+        
+        .data-source {
+            background: #e3f2fd;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #1565c0;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        
+        .formula-box {
+            background: #f8f9fa;
+            border: 2px solid #2c5aa0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+        }
+        
+        .formula {
+            font-size: 1.2em;
+            color: #2c5aa0;
+            font-weight: bold;
+        }
+        
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .note-icon {
+            color: #856404;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .steps {
+            counter-reset: step-counter;
+        }
+        
+        .step {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 40px;
+            margin: 15px 0;
+        }
+        
+        .step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #2c5aa0;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Ficha Metodológica</h1>
+            <h2 style="margin: 10px 0 0 0; font-weight: 300;">Índice de Riesgo de Crimen Organizado (IRCO)</h2>
+        </div>
+
+        <div class="section">
+            <h2>1. Descripción General</h2>
+            <p>El Índice de Riesgo de Crimen Organizado (IRCO) es una medida compuesta que evalúa el nivel de riesgo asociado al crimen organizado en los municipios de Colombia. Este índice combina indicadores de <strong>amenaza</strong> y <strong>vulnerabilidad</strong> para proporcionar una evaluación integral del riesgo territorial.</p>
+            
+            <div class="formula-box">
+                <div class="formula">IRCO = Índice de Amenaza × Índice de Vulnerabilidad</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Componentes del Índice</h2>
+            
+            <div class="subsection">
+                <h3>2.1 Índice de Amenaza</h3>
+                <p>Mide la presencia y actividad de organizaciones criminales y factores que representan amenazas directas a la seguridad territorial.</p>
+                
+                <div class="indicator-grid">
+                    <div class="indicator-card">
+                        <div class="indicator-title">ICCA - Control Coercitivo y Armado</div>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Tasa de Reclutamiento ilícito de menores</li>
+                            <li>Tasa de Secuestro</li>
+                            <li>Tasa de Extorsión</li>
+                            <li>Tasa de Fabricación, tráfico o porte de armas</li>
+                            <li>Tasa de Constreñimiento ilegal por GDOs y GAOs</li>
+                            <li>Tasa de Constreñimiento al sufragante</li>
+                        </ul>
+                        <div class="data-source">Fuente: FGN - Base de datos Procesos V2</div>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-title">IVDH - Violencia contra la Dignidad Humana</div>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Tasa de Desplazamiento forzado</li>
+                            <li>Tasa de Trata de personas</li>
+                        </ul>
+                        <div class="data-source">Fuente: FGN - Base de datos Procesos V2</div>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-title">AIFC - Asociación y facilitación criminal</div>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Tasa de Concierto para delinquir</li>
+                            <li>Tasa de Asesoramiento a GDOs y GAOs</li>
+                        </ul>
+                        <div class="data-source">Fuente: FGN - Base de datos Procesos V2</div>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-title">ICEF - Criminalidad Económica y Financiera</div>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Tasa de Falsificación y tráfico de moneda</li>
+                            <li>Tasa de Favorecimiento al contrabando</li>
+                            <li>Tasa de Contrabando</li>
+                            <li>Tasa de Contrabando de hidrocarburos</li>
+                            <li>Tasa de Lavado de activos</li>
+                        </ul>
+                        <div class="data-source">Fuente: FGN - Base de datos Procesos V2</div>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-title">IEIA - Economías Ilícitas y Ambientales</div>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Tasa de Aprovechamiento ilícito de recursos naturales renovables</li>
+                            <li>Tasa de Deforestación</li>
+                            <li>Tasa de Explotación ilícita de Yacimiento Minero</li>
+                            <li>Tasa de Agravación de delitos ambientales por crimen organizado</li>
+                            <li>Tasa de Tráfico, fabricación o porte de estupefacientes</li>
+                            <li>Tasa de Destinación ilícita de inmuebles</li>
+                            <li>Tasa de Tráfico de pesca</li>
+                        </ul>
+                        <div class="data-source">Fuente: FGN - Base de datos Procesos V2</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>2.2 Índice de Vulnerabilidad</h3>
+                <p>Evalúa las condiciones estructurales que hacen a los territorios más susceptibles a la penetración del crimen organizado.</p>
+                
+                <div class="indicator-grid">
+                    <div class="indicator-card">
+                        <div class="indicator-title">IVCA - Vulnerabilidad por Capacidades Municipales</div>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Municipio Clasificado PDET</li>
+                            <li>Índice de desempeño municipal</li>
+                            <li>Pobreza</li>
+                        </ul>
+                        <div class="data-source">Fuentes: BD PDET, DNP</div>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-title">IVEX - Vulnerabilidad por Exposición a la Amenaza</div>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>Vulnerabilidad de víctimas</li>
+                            <li>Presencia de Actores Criminales en los últimos cinco años</li>
+                            <li>Homicidios</li>
+                        </ul>
+                        <div class="data-source">Fuentes: UARIV, Defensoría del Pueblo, FGN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Metodología de Cálculo</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <strong>Cálculo de tasas para indicadores de amenaza:</strong> Los indicadores de amenaza se calculan como tasas por cada 100,000 habitantes utilizando los datos de la base Procesos V2 de la Fiscalía General de la Nación.
+                </div>
+                
+                <div class="step">
+                    <strong>Normalización logarítmica de amenaza:</strong> Se aplica transformación logarítmica a las tasas de amenaza para normalizar la distribución y escalar los valores entre 0 y 1, donde 1 representa la condición menos deseada.
+                </div>
+                
+                <div class="step">
+                    <strong>Procesamiento de indicadores de vulnerabilidad:</strong> Los indicadores de vulnerabilidad se toman en las unidades originales de cada fuente y se normalizan aplicando transformación logarítmica para escalar entre 0 y 1.
+                </div>
+                
+                <div class="step">
+                    <strong>Agregación de subíndices:</strong> Cada componente (amenaza y vulnerabilidad) se calcula como el promedio simple de sus indicadores, sin aplicar ponderaciones diferenciales.
+                </div>
+                
+                <div class="step">
+                    <strong>Cálculo del IRCO:</strong> El índice final se obtiene multiplicando el Índice de Amenaza por el Índice de Vulnerabilidad.
+                </div>
+            </div>
+            
+            <div class="note">
+                <span class="note-icon">📝</span>
+                <strong>Nota metodológica:</strong> La transformación logarítmica permite que todos los indicadores se sitúen en una escala comparable de 0 a 1, donde 0 representa la condición más favorable (menor riesgo) y 1 la condición menos deseada (mayor riesgo).
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. Fuentes de Información</h2>
+            <ul style="line-height: 2;">
+                <li><strong>Fiscalía General de la Nación (FGN):</strong> Base de datos Procesos V2 - Todos los indicadores de amenaza y homicidios</li>
+                <li><strong>Base de datos PDET:</strong> Clasificación de municipios PDET</li>
+                <li><strong>Departamento Nacional de Planeación (DNP):</strong> Índice de desempeño municipal y datos de pobreza</li>
+                <li><strong>Unidad para la Atención y Reparación Integral a las Víctimas (UARIV):</strong> Índice de riesgo de víctimas</li>
+                <li><strong>Defensoría del Pueblo:</strong> Información sobre presencia de actores criminales</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. Interpretación</h2>
+            <p>El IRCO proporciona una medida integral del riesgo asociado al crimen organizado en cada municipio. Los valores más altos indican mayor riesgo, resultado de la combinación entre altos niveles de amenaza criminal y condiciones de vulnerabilidad territorial. Este índice permite identificar territorios prioritarios para intervenciones focalizadas en seguridad y desarrollo territorial.</p>
+        </div>
+
+        <div class="section">
+            <h2>6. Limitaciones y Consideraciones</h2>
+            
+            <div class="subsection">
+                <h3>6.1 Limitaciones Principales</h3>
+                
+                <div class="indicator-grid">
+                    <div class="indicator-card">
+                        <div class="indicator-title">Cifra Negra</div>
+                        <p>Delitos no reportados no son capturados por el índice</p>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-title">Calidad de Datos</div>
+                        <p>Variaciones en prácticas de registro entre municipios</p>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-title">Subjetividad Metodológica</div>
+                        <p>Decisiones en agrupación y ponderación contienen elementos subjetivos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7. Cronograma de Actualización</h2>
+            
+            <div class="indicator-grid">
+                <div class="indicator-card">
+                    <div class="indicator-title">Cálculo del Índice</div>
+                    <p><strong>Frecuencia:</strong> Mensual</p>
+                    <p>Aprovechando la actualización mensual de SIEDCO</p>
+                </div>
+                
+                <div class="indicator-card">
+                    <div class="indicator-title">Revisión Metodológica</div>
+                    <p><strong>Frecuencia:</strong> Anual</p>
+                    <p>Evaluación de validez y pertinencia de indicadores</p>
+                </div>
+                
+                <div class="indicator-card">
+                    <div class="indicator-title">Validación Integral</div>
+                    <p><strong>Frecuencia:</strong> Cada 3-5 años</p>
+                    <p>Revisión completa de metodología</p>
+                </div>
+            </div>
+            
+            <div class="note">
+                <span class="note-icon">📋</span>
+                <strong>Nota:</strong> Esta ficha metodológica refleja el estado actual de la propuesta. La implementación de métodos de ponderación por gravedad representa una mejora metodológica fundamental recomendada para futuras versiones del índice.
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px; font-style: italic; color: #6c757d;">
+            Observatorio de Política Criminal - Ministerio de Justicia y del Derecho | 2025
+        </div>
+    </div>
+</body>
+</html>
